@@ -2,8 +2,8 @@ name: Model SMC Scanner
 
 on:
   schedule:
-    - cron: '*/15 * * * *'   # כל 15 דקות
-  workflow_dispatch:          # הפעלה ידנית
+    - cron: '*/15 * * * *'
+  workflow_dispatch:
 
 jobs:
   scan:
@@ -21,11 +21,10 @@ jobs:
       - name: Run Model SMC simulator
         run: python smc_simulator.py
 
-      - name: Save results to GitHub
+      - name: Save results
         run: |
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git config user.name "github-actions[bot]"
-          mkdir -p data
-          git add data/portfolio.json data/open_positions.json 2>/dev/null || true
+          git add data/ 2>/dev/null || true
           git diff --staged --quiet || git commit -m "smc: update $(date -u '+%Y-%m-%d %H:%M UTC')"
           git push || true
