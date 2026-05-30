@@ -1,0 +1,20 @@
+{
+  "starting_balance": 10000,
+  "available": 10000.0,
+  "in_trades": 0.0,
+  "total_pnl": 0.0,
+  "high_watermark": 10000.0,
+  "created": "2026-05-30T00:00:00",
+  "last_updated": "2026-05-30T00:00:00",
+  "trades": [],
+  "stats": {
+    "total": 0,
+    "wins": 0,
+    "losses": 0,
+    "timeouts": 0,
+    "win_rate": 0.0,
+    "avg_win_pct": 0.0,
+    "avg_loss_pct": 0.0,
+    "profit_factor": 0.0
+  }
+}
